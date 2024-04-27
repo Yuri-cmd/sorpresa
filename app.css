@@ -1,0 +1,153 @@
+/* ---- reset ---- */
+
+body {
+    margin: 0;
+    background-color: #17182f;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+canvas {
+    display: block;
+    vertical-align: bottom;
+}
+
+/* ---- particles.js container ---- */
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Mensaje de bienvenida */
+.welcome-message {
+    height: 60vh;
+    text-align: center;
+    position: relative;
+    color: white;
+    font-weight: bold;
+    opacity: 0;
+    animation: slide-up 1.5s forwards;
+}
+
+/* Contenedor de las fotos */
+.photo-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 50px auto;
+    max-width: 100%;
+    /* Ajusta el ancho según sea necesario */
+}
+
+.photo-gallery img {
+    width: 300px;
+    height: auto;
+    margin: 10px;
+}
+
+/* Animación de deslizamiento hacia arriba */
+@keyframes slide-up {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.book-slider {
+    width: 300px;
+    /* Ajusta el ancho según sea necesario */
+    height: 400px;
+    /* Ajusta el alto según sea necesario */
+    overflow: hidden;
+}
+
+.book-slider div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    /* Añade una sombra suave */
+    border-radius: 10px;
+    /* Añade bordes redondeados */
+    transition: transform 0.5s ease;
+    /* Agrega una transición suave */
+}
+
+.book-slider img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* Añade estilos especiales al primer elemento */
+.book-slider div:first-child {
+    transform-origin: bottom;
+}
+
+/* Añade estilos especiales al último elemento */
+.book-slider div:last-child {
+    transform-origin: top;
+}
+
+/* Agrega la animación al pasar las páginas */
+.book-slider:hover div {
+    transform: rotateX(15deg);
+    /* Cambia la perspectiva para simular el movimiento de las páginas */
+}
+
+/* Elimina la animación al dejar de pasar las páginas */
+.book-slider:not(:hover) div {
+    transition: none;
+}
+
+.album-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.album-contenido {
+    background: rgba(0, 0, 0, 0.5);
+    height: fit-content;
+    width: 40%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.album {
+    width: 100%;
+    margin: 20px;
+    z-index: 1;
+}
+
+.album-content {
+    display: flex;
+    justify-content: center;
+}
+
+.album img {
+    width: 120px;
+    height: auto;
+    border-radius: 10px;
+}
+
+@media (max-width: 680px) {
+    .album-contenido {
+        width: 100%;
+    }
+}
